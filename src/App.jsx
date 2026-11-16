@@ -22,7 +22,32 @@ const FILTER_MAP = {
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
-  const [tasks, setTasks] = useState(props.tasks);
+  const [tasks, setTasks] = useState(() => {
+    try {
+      const savedTasks = localStorage.getItem("todoTasks");
+
+      if (savedTasks !== null) {
+        const parsedTasks = JSON.parse(savedTasks);
+        if (Array.isArray(parsedTasks)) {
+          return parsedTasks;
+        }
+      }
+    } catch (error) {
+      console.error("Failed to load saved tasks:", error);
+    }
+
+    return props.tasks;
+  });
+
+  // Save changes to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem("todoTasks", JSON.stringify(tasks));
+    } catch (error) {
+      console.error("Failed to save tasks:", error);
+    }
+  }, [tasks]);
+
   const [filter, setFilter] = useState("All");
   const listHeadingRef = useRef(null);
   const prevTaskLength = usePrevious(tasks.length);
@@ -99,7 +124,7 @@ function App(props) {
 
   return (
     <div className="todoapp stack-large">
-      <h1>Todo List</h1>
+      <h1>To-do List</h1>
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
         {filterList}
