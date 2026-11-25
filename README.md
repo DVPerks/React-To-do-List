@@ -1,27 +1,95 @@
+
 # React To-do List
 
-This project features a dynamic to-do list with add/remove/edit and filter features. 
+**[Live Demo](https://dvperks.github.io/portfolio/project-viewer.html?project=1)** | **[Developer Portfolio](https://dvperks.github.io/portfolio/)**
 
-The application is broken down into 3 main components:
-  Form - For adding new tasks
-  Filter - Filter Through all, active, or completed tasks
-  Todo - Mark tasks as complete, edit them, and remove them
+A responsive task management application built with React and Vite. The application demonstrates component-based development, React Hooks, state management, persistent browser storage, and accessible user interactions.
 
+## Features
 
+- Create, edit, complete, and delete tasks.
+- Filter tasks by all, active, or completed status.
+- Dynamically update the interface as task state changes.
+- Persist tasks using local storage.
+- Support keyboard-accessible interactions.
+- Provide a responsive user interface.
 
-# React + Vite
+## Built With
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- React
+- React Hooks
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Vite
+- ESLint
+- Nano ID
 
-Currently, two official plugins are available:
+## Technical Highlights
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Component-Based Development
 
-## React Compiler
+The application separates responsibilities into reusable components, including task creation, filtering, and individual task interactions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### State Management
 
-## Expanding the ESLint configuration
+React Hooks manage application state and update the interface in response to user interactions. Task creation, editing, completion, deletion, and filtering are handled through state-driven rendering.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Persistent Storage
+
+Local storage preserves task information between browser sessions without requiring a backend or database.
+
+### Accessibility
+
+The interface incorporates semantic HTML, descriptive form controls, and keyboard-accessible interactions.
+
+## Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/DVPerks/todo-react.git
+cd todo-react
+```
+
+Install dependencies and start the development server:
+
+```bash
+npm install
+npm run dev
+```
+
+Open the URL displayed in the terminal.
+
+## Development Commands
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Generate a production build |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run ESLint checks |
+
+## Project Structure
+
+```text
+├── public/             # Public assets
+├── src/                # React components and application source
+├── index.html          # Application entry point
+├── package.json        # Dependencies and development scripts
+├── vite.config.js      # Vite configuration
+├── eslint.config.js    # ESLint configuration
+└── README.md           # Project documentation
+```
+
+## Development Focus
+
+This project demonstrates practical React development through reusable components, declarative rendering, state management, persistent data, and interactive UI behavior.
+
+## Author
+
+Drake Perkins — Frontend Software Engineer
+
+- [Developer Portfolio](https://dvperks.github.io/portfolio/)
+- [GitHub](https://github.com/DVPerks)
+- [LinkedIn](https://www.linkedin.com/in/drake-p-0a9472398/)
